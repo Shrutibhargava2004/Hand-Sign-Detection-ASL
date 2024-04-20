@@ -11,7 +11,7 @@ class ai:
     def main(self):
         root = Tk()
         root.geometry('550x600')
-        root.title('American Sign Langague')
+        root.title('Hand-Sign-Language-Detection-Application')
         
         # Title in the center
         Label(root, text="AMERICAN SIGN LANGAGUE  ", font=('arial',18 , 'bold')).grid(row=0, column=0,columnspan=500,pady=25)
@@ -133,9 +133,9 @@ class ai:
                     prediction, index = classifier.getPrediction(imgWhite, draw = False)
                     ##print(prediction, index)           
 
-                cv2.rectangle(imgOutput, (x-offset,y-offset-50), (x-offset+90,y-offset), (255,0,0), cv2.FILLED)
+                cv2.rectangle(imgOutput, (x-offset,y-offset-50), (x-offset+90,y-offset), (51,68,255), cv2.FILLED)
                 cv2.putText(imgOutput, labels[index], (x,y-26), cv2.FONT_HERSHEY_COMPLEX, 1.7, (255,255,255), 2)
-                cv2.rectangle(imgOutput, (x-offset,y-offset), (x+w+offset,y+h+offset), (255,0,0), 4)
+                cv2.rectangle(imgOutput, (x-offset,y-offset), (x+w+offset,y+h+offset), (51,68,255), 4)
                 
                 cv2.imshow("Hand Keypoints", imgCrop)
                 ##cv2.imshow("ImageWhite", imgWhite)
